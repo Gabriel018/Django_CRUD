@@ -2,11 +2,36 @@
 
 
 <h3>Clientes</h3>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>
+
 
 {% for x in client %}
+<table style="width:50%">
+  <tr>
+      <th style="width:10%" >Id</th>
+    <th>Nome</th>
+    <th>Sobre Nome</th>
+    <th>Email</th>
+  </tr>
+  <tr >
+    <td  style="width:10%">{{x.id}}</td>
+    <td style="width:30%">{{x.Nome}}</td>
+    <td style="width:30%">{{x.Sobre_Nome}}</td>
+    <td>{{x.Email}}</td>
+  </tr>
 
-{{x.id}}
-{{x.Nome}}
-
+</table>
 
 {% endfor%}
