@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
+from django.urls import reverse
 from .models import Contatos
 # Create your views here.
 
@@ -17,4 +18,10 @@ def clientes(request):
     }
 
     return HttpResponse(template.render(context,request))
+
+def delete(request,id):
+    Client = Contatos.objects.get(id=id)
+    Client.delete()
+
+    return HttpResponseRedirect(reverse('home'))
 
