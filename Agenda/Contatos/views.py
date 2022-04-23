@@ -39,9 +39,38 @@ def client_add(request):
      return HttpResponseRedirect(reverse('clientes'))
 
 
+def up_form(request,id):
+    Client = Contatos.objects.get(id=id)
+    context = {
+        'Client':Client,
+    }
+    template = loader.get_template('update_client.html')
+
+    return HttpResponse(template.render(context, request))
+
+def up_client(request,id):
+    Nome = request.POST['Nome']
+    Sobre_Nome = request.POST['Sobre_Nome']
+    Tel = request.POST['Tel']
+    idade = request.POST['idade']
+    Email = request.POST['Email']
+
+    Client = Contatos.objects.get(id=id)
+
+    Client.Nome = Nome
+    Client.Sobre_Nome = Sobre_Nome
+    Client.Tel =Tel
+    Client.idade = idade
+    Client.Email = Email
+
+    Client.save()
+
+    return HttpResponseRedirect(reverse('clientes'))
+
 def delete(request,id):
     Client = Contatos.objects.get(id=id)
     Client.delete()
 
     return HttpResponseRedirect(reverse('clientes'))
+
 

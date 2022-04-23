@@ -1,0 +1,26 @@
+
+{% include 'home.html'%}
+<h3>Alterar Dados</h3>
+<form class="row g-3" action="up_client/{{Client.id}}" method="post">
+   {% csrf_token %}
+  <div class="col-md-3">
+    <label class="form-label">Nome</label>
+    <input name="Nome" class="form-control" value="{{Client.Nome}}">
+    <label class="form-label">Email</label>
+    <input name="Email"  class="form-control" value="{{Client.Email}}">
+    <input  style="width:30%" class="btn btn-primary" type="submit" value="Alterar">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Sobre Nome</label>
+    <input name="Sobre_Nome" class="form-control" value="{{Client.Sobre_Nome}}" >
+    <label  class="form-label">Telefone</label>
+    <input name="Tel"  class="form-control"  value="{{Client.Tel}}">
+  </div>
+  <div class="col-md-1">
+    <label  class="form-label">Idade</label>
+    <input name="idade" class="form-control" value="{{Client.idade}}" >
+  </div>
+</form>
+<br>
+
+
