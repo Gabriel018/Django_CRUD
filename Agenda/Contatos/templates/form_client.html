@@ -1,0 +1,28 @@
+{% include 'home.html'%}
+
+<form class="row g-3" action="client_add" method="post">
+   {% csrf_token %}
+  <div class="col-md-3">
+    <label class="form-label">Nome</label>
+    <input name="Nome" class="form-control">
+    <label class="form-label">Email</label>
+    <input name="Email"  class="form-control">
+    <input  style="width:30%" class="btn btn-primary" type="submit" value="Cadastrar">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Sobre Nome</label>
+    <input name="Sobre_Nome" class="form-control" >
+    <label  class="form-label">Telefone</label>
+    <input name="Tel"  class="form-control" >
+  </div>
+  <div class="col-md-1">
+    <label  class="form-label">Idade</label>
+    <input name="idade" class="form-control" >
+  </div>
+
+</form>
+
+
+<br>
+
+

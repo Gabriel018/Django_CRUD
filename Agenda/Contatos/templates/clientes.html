@@ -27,7 +27,7 @@ td, th {
     <th>Modificar</th>
   </tr>
   <tr >
-    <td  style="width:10%">{{x.id}}</td>
+    <td style="width:10%">{{x.id}}</td>
     <td style="width:20%">{{x.Nome}}</td>
     <td style="width:20%">{{x.Sobre_Nome}}</td>
     <td style="width:30%" >{{x.Email}}</td>
@@ -37,4 +37,4 @@ td, th {
 </table>
 {% endfor%}
 
-<a class="btn btn-primary" href="{% url 'home'  %}" >Cadastrar</a>
+<a class="btn btn-primary" href="{% url 'add_form'  %}" >Cadastrar</a>
